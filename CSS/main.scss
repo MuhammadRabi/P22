@@ -1,0 +1,149 @@
+/* import major sass files */
+
+@import "sass/variables";
+@import "sass/mixins";
+@import "sass/buttons";
+
+/* Start Global rules */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ===== Manual Responsive ===== */
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /* small */
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  /* medium */
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  /* large */
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
+/* ===== Manual Responsive ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 1px solid $mainColor;
+  background-color: #fff;
+  padding: 7px 20px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.special-heading:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #000;
+  width: 10%;
+  top: 130%;
+  left: 45%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.section-head p {
+  font-size: 13px;
+  color: #a8a8a8;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-head h3 {
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pricing {
+  padding: $sectionPadding;
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 35px;
+    .card {
+      border-top: 1px solid $mainColor;
+      padding: 15px 0;
+      background-color: #fcfcfc;
+      .card-title {
+        text-align: center;
+      }
+      /*border: 1px solid $mainColor;*/
+      height: auto;
+      .plan-feat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid $mainColor;
+        border-bottom: 1px solid $mainColor;
+        padding: 15px 0;
+        li {
+          padding: 15px;
+          width: 50%;
+          text-align: center;
+          &:not(:last-of-type) {
+            border-bottom: 2px solid $mainColor;
+          }
+        }
+      }
+      button {
+        display: block;
+        margin: 30px auto;
+      }
+    }
+  }
+  p:last-of-type {
+    margin: 30px auto;
+    text-align: center;
+    font-size: 20px;
+  }
+  .contact-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: $mainColor;
+    color: #fff;
+    margin: 30px auto;
+    text-align: center;
+    display: block;
+    width: 140px;
+    text-transform: capitalize;
+    transition: $mainTransition;
+    &:hover {
+      background-color: #17aeda;
+    }
+  }
+}
