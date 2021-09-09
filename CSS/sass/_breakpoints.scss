@@ -1,0 +1,27 @@
+/** experimenta responsive breakpoints **/
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediumScreens {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin minMedium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin largeScreens {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+// version 1.10

@@ -2,6 +2,8 @@
 /* idenity color */
 /** experimental grid mixins **/
 /** experimental grid mixins **/
+/* @mixin overlay{} */
+/** experimenta responsive breakpoints **/
 /* Start Global rules */
 * {
   -webkit-box-sizing: border-box;
@@ -38,6 +40,33 @@
 }
 
 /* ===== Manual Responsive ===== */
+.special-heading:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 2px;
+  background-color: #333;
+  bottom: -30px;
+  width: 120px;
+}
+
+.special-heading:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  bottom: -38px;
+  background-color: white;
+}
+
+/* reusable components */
 html {
   scroll-behavior: smooth;
 }
@@ -61,46 +90,79 @@ a {
   color: #000;
 }
 
-.special-heading:before {
-  content: "";
-  position: absolute;
-  height: 1px;
-  background: #000;
-  width: 10%;
-  top: 130%;
-  left: 45%;
-}
-
-.center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .margin-50 {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.section-head p {
-  font-size: 13px;
-  color: #a8a8a8;
-  text-align: center;
-  padding-bottom: 30px;
+.margin-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-.section-head h3 {
+.main-heading h3 {
   position: relative;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 500;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 50px;
 }
 
+.main-heading p {
+  line-height: 1.6;
+  width: 50%;
+  margin: 5px auto;
+  font-size: 14px;
+  color: #a8a8a8;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 991px) {
+  .main-heading p {
+    width: 75%;
+  }
+}
+
+/* reusable components */
+.img-fluid {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* start portfolio */
+.port .photo-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.port .photo-grid .img-box {
+  width: 25%;
+}
+
+@media (max-width: 767px) {
+  .port .photo-grid .img-box {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .port .photo-grid .img-box {
+    width: 50%;
+  }
+}
+
+/* End portfolio */
+/* start Pricing section */
 .pricing {
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .pricing .cards {
@@ -113,14 +175,34 @@ a {
 
 .pricing .cards .card {
   border-top: 1px solid #19c8fa;
-  padding: 15px 0;
   background-color: #fcfcfc;
-  /*border: 1px solid $mainColor;*/
+  text-align: center;
   height: auto;
 }
 
 .pricing .cards .card .card-title {
-  text-align: center;
+  margin: 25px;
+  text-transform: uppercase;
+}
+
+.pricing .cards .card .card-title span {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.pricing .cards .card .card-title span:before {
+  content: "$";
+  font-size: 18px;
+  position: relative;
+  top: -35px;
+  margin-right: 5px;
+}
+
+.pricing .cards .card .card-title span:after {
+  content: "/Mo";
+  font-size: 18px;
+  position: relative;
+  margin-left: 5px;
 }
 
 .pricing .cards .card .plan-feat {
@@ -140,13 +222,12 @@ a {
 }
 
 .pricing .cards .card .plan-feat li {
-  padding: 15px;
+  padding: 15px 10px;
   width: 50%;
-  text-align: center;
 }
 
 .pricing .cards .card .plan-feat li:not(:last-of-type) {
-  border-bottom: 2px solid #19c8fa;
+  border-bottom: 1px solid #19c8fa;
 }
 
 .pricing .cards .card button {
@@ -154,10 +235,14 @@ a {
   margin: 30px auto;
 }
 
-.pricing p:last-of-type {
-  margin: 30px auto;
+.pricing .card-footer {
+  margin-top: 50px;
+}
+
+.pricing .card-footer p {
   text-align: center;
   font-size: 20px;
+  margin: auto;
 }
 
 .pricing .contact-btn {
@@ -176,5 +261,27 @@ a {
 
 .pricing .contact-btn:hover {
   background-color: #17aeda;
+}
+
+/* End Pricing section */
+.scroll-to-top {
+  width: 40px;
+  height: 35px;
+  background-color: White;
+  position: fixed;
+  bottom: 15px;
+  right: -50px;
+  color: #19c8fa;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.4px;
+  margin: 1px auto;
+  cursor: pointer;
+}
+
+.scroll-to-top.show {
+  right: 35px;
 }
 /*# sourceMappingURL=main.css.map */

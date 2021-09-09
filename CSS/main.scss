@@ -2,6 +2,7 @@
 
 @import "sass/variables";
 @import "sass/mixins";
+@import "sass/breakpoints";
 @import "sass/buttons";
 
 /* Start Global rules */
@@ -34,6 +35,33 @@
 }
 /* ===== Manual Responsive ===== */
 
+.special-heading {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #333;
+    bottom: -30px;
+    width: 120px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    bottom: -38px;
+    background-color: white;
+  }
+}
+
+/* reusable components */
+
 html {
   scroll-behavior: smooth;
 }
@@ -57,38 +85,66 @@ a {
   color: #000;
 }
 
-.special-heading:before {
-  content: "";
-  position: absolute;
-  height: 1px;
-  background: #000;
-  width: 10%;
-  top: 130%;
-  left: 45%;
-}
-.center {
-  display: flex;
-  justify-content: center;
-}
-
 .margin-50 {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.section-head p {
-  font-size: 13px;
-  color: #a8a8a8;
-  text-align: center;
-  padding-bottom: 30px;
-}
-.section-head h3 {
-  position: relative;
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
+.margin-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
+.main-heading {
+  h3 {
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  p {
+    line-height: 1.6;
+    width: 50%;
+    margin: 5px auto;
+    font-size: 14px;
+    color: #a8a8a8;
+    text-align: center;
+    padding-bottom: 60px;
+    @media (max-width: 991px) {
+      width: 75%;
+    }
+  }
+}
+/* reusable components */
+
+.img-fluid {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+/* start portfolio */
+.port {
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    .img-box {
+      width: 25%;
+      @include mobile {
+        width: 100%;
+      }
+      @include mediumScreens {
+        width: 50%;
+      }
+    }
+  }
+}
+/* End portfolio */
+
+/* start Pricing section */
 .pricing {
   padding: $sectionPadding;
   .cards {
@@ -97,12 +153,30 @@ a {
     gap: 35px;
     .card {
       border-top: 1px solid $mainColor;
-      padding: 15px 0;
       background-color: #fcfcfc;
+      text-align: center;
       .card-title {
-        text-align: center;
+        margin: 25px;
+        text-transform: uppercase;
+
+        span {
+          font-size: 48px;
+          font-weight: 700;
+          &:before {
+            content: "$";
+            font-size: 18px;
+            position: relative;
+            top: -35px;
+            margin-right: 5px;
+          }
+          &:after {
+            content: "/Mo";
+            font-size: 18px;
+            position: relative;
+            margin-left: 5px;
+          }
+        }
       }
-      /*border: 1px solid $mainColor;*/
       height: auto;
       .plan-feat {
         display: flex;
@@ -112,11 +186,10 @@ a {
         border-bottom: 1px solid $mainColor;
         padding: 15px 0;
         li {
-          padding: 15px;
+          padding: 15px 10px;
           width: 50%;
-          text-align: center;
           &:not(:last-of-type) {
-            border-bottom: 2px solid $mainColor;
+            border-bottom: 1px solid $mainColor;
           }
         }
       }
@@ -126,11 +199,15 @@ a {
       }
     }
   }
-  p:last-of-type {
-    margin: 30px auto;
-    text-align: center;
-    font-size: 20px;
+  .card-footer {
+    margin-top: 50px;
+    p {
+      text-align: center;
+      font-size: 20px;
+      margin: auto;
+    }
   }
+
   .contact-btn {
     font-size: 18px;
     padding: 10px 20px;
@@ -145,5 +222,26 @@ a {
     &:hover {
       background-color: #17aeda;
     }
+  }
+}
+/* End Pricing section */
+
+.scroll-to-top {
+  width: 40px;
+  height: 35px;
+  background-color: White;
+  position: fixed;
+  bottom: 15px;
+  right: -50px;
+  color: $mainColor;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.4px;
+  margin: 1px auto;
+  cursor: pointer;
+  &.show {
+    right: 35px;
   }
 }
