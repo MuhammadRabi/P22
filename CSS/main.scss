@@ -7,11 +7,52 @@
 
 /* Start Global rules */
 
+/* reusable components */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 1px solid $mainColor;
+  background-color: #fff;
+  padding: 7px 20px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.margin-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.margin-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+/* end global rules */
 
 /* ===== Manual Responsive ===== */
 
@@ -60,41 +101,6 @@
   }
 }
 
-/* reusable components */
-
-html {
-  scroll-behavior: smooth;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-button {
-  border: 1px solid $mainColor;
-  background-color: #fff;
-  padding: 7px 20px;
-  margin-top: 25px;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-.margin-50 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.margin-100 {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
 .main-heading {
   h3 {
     position: relative;
@@ -119,30 +125,185 @@ a {
 }
 /* reusable components */
 
-.img-fluid {
-  max-width: 100%;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
 }
+
+/* start services section */
+.services {
+  padding: $sectionPadding;
+}
+/* end services section */
+
+/* start product-feat section */
+
+.product-feat {
+  padding: $sectionPadding;
+  position: relative;
+  background: url("/images/design-features.jpg");
+  background-size: cover;
+  height: 500px;
+  .overlay {
+    @include overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  .avatar-box {
+    z-index: 1;
+    margin-left: 150px;
+    img {
+      position: absolute;
+      bottom: -100px;
+    }
+    /* margin: 130px 165px;*/
+  }
+  .details-box {
+    background-color: rgba(15, 116, 143, 0.7);
+    position: absolute;
+    width: 55%;
+    height: 250px;
+    right: 0;
+    padding: 35px;
+    top: 15%;
+    h3 {
+      text-transform: uppercase;
+      padding-bottom: 25px;
+    }
+    ul li {
+      padding: 7px 2px;
+    }
+  }
+}
+
+/* end product-feat section */
+
 /* start portfolio */
 .port {
+  padding: $sectionPadding;
+  .switch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    li {
+      padding: 10px;
+      cursor: pointer;
+      transition: $mainTransition;
+      &.active {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+  }
   .photo-grid {
     display: flex;
     flex-wrap: wrap;
     .img-box {
+      position: relative;
       width: 25%;
+      overflow: hidden;
+      cursor: pointer;
       @include mobile {
         width: 100%;
       }
       @include mediumScreens {
         width: 50%;
       }
+      &:hover .img-caption {
+        bottom: 0;
+      }
+      &:hover img {
+        transform: rotate(3deg) scale(1.1);
+      }
+      img {
+        transition: $mainTransition;
+      }
+      .img-caption {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 75px;
+        transition: $mainTransition;
+        background-color: #fff;
+        text-transform: capitalize;
+        font-size: 14px;
+        padding: 5px 15px;
+        h4 {
+          margin-top: 5px;
+          margin-bottom: 7px;
+          font-weight: 400;
+        }
+        span {
+          color: $mainColor;
+          font-weight: 600;
+        }
+      }
     }
   }
 }
 /* End portfolio */
+
+/* start super section */
+.super {
+  position: relative;
+  .overlay {
+    @include overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  video {
+    width: 100%;
+  }
+  .details-box {
+    background-color: rgba(15, 116, 143, 0.7);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 25%;
+    margin: 150px auto;
+  }
+}
+
+/* end super section */
+
+/* start about section */
+.about {
+  padding: $sectionPadding;
+}
+
+/* end about section */
+
+/* start quote */
+.quote {
+  position: relative;
+  padding: $sectionPadding;
+  height: 300px;
+  background: url("../images/quote.jpg");
+  background-size: cover;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    @include overlay;
+  }
+  .text-box {
+    color: #fff;
+    text-align: center;
+    margin: 110px auto;
+    p {
+      font-size: 28px;
+      padding-bottom: 20px;
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    h4 {
+      font-size: 18px;
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* end quote */
 
 /* start Pricing section */
 .pricing {
@@ -226,6 +387,35 @@ body {
 }
 /* End Pricing section */
 
+/* start cont section */
+
+.cont {
+  padding: $sectionPadding;
+  background: url("/images/subscribe.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  .overlay {
+    @include overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  .text-box {
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+/* end cont section */
+/* start contact section */
+
+.contact {
+  padding: $sectionPadding;
+}
+/* end contact section */
+
+/* scroll to top styling */
 .scroll-to-top {
   width: 40px;
   height: 35px;
@@ -241,7 +431,9 @@ body {
   line-height: 1.4px;
   margin: 1px auto;
   cursor: pointer;
+  z-index: 999;
   &.show {
     right: 35px;
   }
 }
+/* scroll to top styling */

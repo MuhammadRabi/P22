@@ -2,14 +2,54 @@
 /* idenity color */
 /** experimental grid mixins **/
 /** experimental grid mixins **/
-/* @mixin overlay{} */
 /** experimenta responsive breakpoints **/
 /* Start Global rules */
+/* reusable components */
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 1px solid #19c8fa;
+  background-color: #fff;
+  padding: 7px 20px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.margin-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.margin-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+/* end global rules */
 /* ===== Manual Responsive ===== */
 .container {
   padding-left: 15px;
@@ -66,40 +106,6 @@
   background-color: white;
 }
 
-/* reusable components */
-html {
-  scroll-behavior: smooth;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-button {
-  border: 1px solid #19c8fa;
-  background-color: #fff;
-  padding: 7px 20px;
-  margin-top: 25px;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-.margin-50 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.margin-100 {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
 .main-heading h3 {
   position: relative;
   font-size: 40px;
@@ -126,15 +132,93 @@ a {
 }
 
 /* reusable components */
-.img-fluid {
-  max-width: 100%;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
 }
 
+/* start services section */
+.services {
+  padding: 50px 0;
+}
+
+/* end services section */
+/* start product-feat section */
+.product-feat {
+  padding: 50px 0;
+  position: relative;
+  background: url("/images/design-features.jpg");
+  background-size: cover;
+  height: 500px;
+}
+
+.product-feat .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.product-feat .avatar-box {
+  z-index: 1;
+  margin-left: 150px;
+  /* margin: 130px 165px;*/
+}
+
+.product-feat .avatar-box img {
+  position: absolute;
+  bottom: -100px;
+}
+
+.product-feat .details-box {
+  background-color: rgba(15, 116, 143, 0.7);
+  position: absolute;
+  width: 55%;
+  height: 250px;
+  right: 0;
+  padding: 35px;
+  top: 15%;
+}
+
+.product-feat .details-box h3 {
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+
+.product-feat .details-box ul li {
+  padding: 7px 2px;
+}
+
+/* end product-feat section */
 /* start portfolio */
+.port {
+  padding: 50px 0;
+}
+
+.port .switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+}
+
+.port .switch li {
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.port .switch li.active {
+  background-color: #19c8fa;
+  color: #fff;
+}
+
 .port .photo-grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,7 +228,10 @@ body {
 }
 
 .port .photo-grid .img-box {
+  position: relative;
   width: 25%;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -159,7 +246,127 @@ body {
   }
 }
 
+.port .photo-grid .img-box:hover .img-caption {
+  bottom: 0;
+}
+
+.port .photo-grid .img-box:hover img {
+  -webkit-transform: rotate(3deg) scale(1.1);
+          transform: rotate(3deg) scale(1.1);
+}
+
+.port .photo-grid .img-box img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.port .photo-grid .img-box .img-caption {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #fff;
+  text-transform: capitalize;
+  font-size: 14px;
+  padding: 5px 15px;
+}
+
+.port .photo-grid .img-box .img-caption h4 {
+  margin-top: 5px;
+  margin-bottom: 7px;
+  font-weight: 400;
+}
+
+.port .photo-grid .img-box .img-caption span {
+  color: #19c8fa;
+  font-weight: 600;
+}
+
 /* End portfolio */
+/* start super section */
+.super {
+  position: relative;
+}
+
+.super .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.super video {
+  width: 100%;
+}
+
+.super .details-box {
+  background-color: rgba(15, 116, 143, 0.7);
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 25%;
+  margin: 150px auto;
+}
+
+/* end super section */
+/* start about section */
+.about {
+  padding: 50px 0;
+}
+
+/* end about section */
+/* start quote */
+.quote {
+  position: relative;
+  padding: 50px 0;
+  height: 300px;
+  background: url("../images/quote.jpg");
+  background-size: cover;
+}
+
+.quote .overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.quote .text-box {
+  color: #fff;
+  text-align: center;
+  margin: 110px auto;
+}
+
+.quote .text-box p {
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .quote .text-box p {
+    font-size: 18px;
+  }
+}
+
+.quote .text-box h4 {
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  .quote .text-box h4 {
+    font-size: 14px;
+  }
+}
+
+/* end quote */
 /* start Pricing section */
 .pricing {
   padding: 50px 0;
@@ -264,6 +471,45 @@ body {
 }
 
 /* End Pricing section */
+/* start cont section */
+.cont {
+  padding: 50px 0;
+  background: url("/images/subscribe.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+}
+
+.cont .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.cont .text-box {
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* end cont section */
+/* start contact section */
+.contact {
+  padding: 50px 0;
+}
+
+/* end contact section */
+/* scroll to top styling */
 .scroll-to-top {
   width: 40px;
   height: 35px;
@@ -279,9 +525,12 @@ body {
   line-height: 1.4px;
   margin: 1px auto;
   cursor: pointer;
+  z-index: 999;
 }
 
 .scroll-to-top.show {
   right: 35px;
 }
+
+/* scroll to top styling */
 /*# sourceMappingURL=main.css.map */
