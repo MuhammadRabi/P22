@@ -19,8 +19,8 @@ scrollBtn.addEventListener("click", () => {
 // filter functionality
 
 let switchLi = document.querySelectorAll(".switch li");
-let img = Array.from(document.images);
-console.log(img);
+let portImgs = document.querySelectorAll(".photo-grid img");
+let img = Array.from(portImgs);
 
 switchLi.forEach((li) => {
   li.addEventListener("click", () => {

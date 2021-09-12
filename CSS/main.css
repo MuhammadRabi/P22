@@ -37,12 +37,10 @@ a {
 
 .margin-50 {
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .margin-100 {
   margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 .img-fluid {
@@ -120,7 +118,8 @@ a {
   width: 50%;
   margin: 5px auto;
   font-size: 14px;
-  color: #a8a8a8;
+  color: #777;
+  line-height: 2;
   text-align: center;
   padding-bottom: 60px;
 }
@@ -138,13 +137,13 @@ body {
 
 /* start services section */
 .services {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 /* end services section */
 /* start product-feat section */
 .product-feat {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
   position: relative;
   background: url("/images/design-features.jpg");
   background-size: cover;
@@ -176,9 +175,9 @@ body {
   background-color: rgba(15, 116, 143, 0.7);
   position: absolute;
   width: 55%;
-  height: 250px;
+  height: 340px;
   right: 0;
-  padding: 35px;
+  padding: 70px;
   top: 15%;
 }
 
@@ -194,7 +193,7 @@ body {
 /* end product-feat section */
 /* start portfolio */
 .port {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 .port .switch {
@@ -305,26 +304,59 @@ body {
 }
 
 .super .details-box {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: rgba(15, 116, 143, 0.7);
   color: #fff;
   position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   top: 50%;
   width: 100%;
-  height: 25%;
-  margin: 150px auto;
+  padding: 75px;
+}
+
+.super .details-box h3 {
+  margin: 5px 0 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+}
+
+.super .details-box h4 {
+  margin-bottom: 20px;
+}
+
+.super .details-box a {
+  color: #fff;
+  background-color: #000;
+  margin: 10px 0;
+  padding: 10px 15px;
+  text-transform: capitalize;
 }
 
 /* end super section */
 /* start about section */
 .about {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 /* end about section */
 /* start quote */
 .quote {
   position: relative;
-  padding: 50px 0;
+  padding: 50px 0 0 0;
   height: 300px;
   background: url("../images/quote.jpg");
   background-size: cover;
@@ -369,7 +401,7 @@ body {
 /* end quote */
 /* start Pricing section */
 .pricing {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 .pricing .cards {
@@ -473,7 +505,7 @@ body {
 /* End Pricing section */
 /* start cont section */
 .cont {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
   background: url("/images/subscribe.jpg");
   background-size: cover;
   height: 250px;
@@ -505,7 +537,7 @@ body {
 /* end cont section */
 /* start contact section */
 .contact {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 /* end contact section */
@@ -533,4 +565,20 @@ body {
 }
 
 /* scroll to top styling */
+footer {
+  position: relative;
+  background: url("/images/subscribe.jpg");
+  background-size: cover;
+  height: 400px;
+  padding: 0;
+}
+
+footer .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 /*# sourceMappingURL=main.css.map */
