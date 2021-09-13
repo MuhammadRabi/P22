@@ -28,11 +28,10 @@ switchLi.forEach((li) => {
       el.classList.remove("active");
     });
     li.classList.add("active");
-  });
-  li.addEventListener("click", () => {
     img.forEach((img) => {
       img.style.opacity = "30%";
     });
+
     document.querySelectorAll(li.dataset.cat).forEach((ele) => {
       ele.style.opacity = "100%";
     });
