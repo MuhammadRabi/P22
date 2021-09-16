@@ -205,6 +205,8 @@ header .container nav ul li a:hover, header .container nav ul li a.active {
   top: 50%;
   left: 0;
   width: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   padding: 50px;
   background-color: rgba(15, 116, 143, 0.7);
   display: -webkit-box;
@@ -236,7 +238,7 @@ header .container nav ul li a:hover, header .container nav ul li a.active {
 .product-feat {
   padding: 50px 0 0 0;
   position: relative;
-  background: url("/images/design-features.jpg");
+  background: url("../images/design-features.jpg");
   background-size: cover;
   height: 500px;
 }
@@ -597,7 +599,7 @@ header .container nav ul li a:hover, header .container nav ul li a.active {
 /* start cont section */
 .cont {
   padding: 50px 0 0 0;
-  background: url("/images/subscribe.jpg");
+  background: url("../images/subscribe.jpg");
   background-size: cover;
   height: 250px;
   position: relative;
@@ -632,33 +634,9 @@ header .container nav ul li a:hover, header .container nav ul li a.active {
 }
 
 /* end contact section */
-/* scroll to top styling */
-.scroll-to-top {
-  width: 40px;
-  height: 35px;
-  background-color: White;
-  position: fixed;
-  bottom: 15px;
-  right: -50px;
-  color: #19c8fa;
-  font-weight: bold;
-  padding: 10px;
-  font-size: 24px;
-  text-align: center;
-  line-height: 1.4px;
-  margin: 1px auto;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.scroll-to-top.show {
-  right: 35px;
-}
-
-/* scroll to top styling */
 footer {
   position: relative;
-  background: url("/images/subscribe.jpg");
+  background: url("../images/subscribe.jpg");
   background-size: cover;
   height: 400px;
   padding: 0;
@@ -672,4 +650,29 @@ footer .overlay {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* scroll to top styling */
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+  background-color: #19c8fa;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  background-color: #086782;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+}
+
+/* scroll to top styling */
 /*# sourceMappingURL=main.css.map */
