@@ -6,6 +6,12 @@
   }
 }
 
+@mixin mobileToMedium {
+  @media (max-width: 767px) and (max-width: 991px) {
+    @content;
+  }
+}
+
 @mixin mediumScreens {
   @media (min-width: 768px) and (max-width: 991px) {
     @content;

@@ -1,3 +1,13 @@
+// mobile nav
+
+let navBar = document.querySelector("nav");
+let menuToggle = document.querySelector(".menu-toggle");
+
+menuToggle.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+});
+
 // scroll to top functionality
 
 let scrollBtn = document.querySelector(".scroll-to-top");
