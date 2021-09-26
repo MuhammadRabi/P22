@@ -249,9 +249,9 @@ header {
   }
   .hero-text {
     position: absolute;
+    width: 50%;
     top: 50%;
     left: 0;
-    width: 50%;
     transform: translateY(-50%);
     padding: 50px;
     background-color: rgba(15, 116, 143, 0.7);
@@ -600,7 +600,7 @@ header {
 }
 /* End Pricing section */
 
-/* start cont section */
+/* start subscribe section */
 
 .subscribe {
   padding-top: $sectionPadding;
@@ -679,7 +679,7 @@ header {
     }
   }
 }
-/* end cont section */
+/* end subscribe section */
 
 /* start contact section */
 

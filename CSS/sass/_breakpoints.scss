@@ -18,7 +18,7 @@
   }
 }
 
-@mixin MediumandLarge {
+@mixin mediumandLarge {
   @media (min-width: 768px) {
     @content;
   }

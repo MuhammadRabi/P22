@@ -30,6 +30,30 @@ function scrollToTop(scrollBtn) {
 
 scrollToTop(scrollBtn);
 
+// scroll to section functionality
+
+let navLi = document.querySelectorAll("nav ul li a");
+
+function scrollToSection(section) {
+  section.forEach((ele) => {
+    ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      section.forEach((a) => {
+        a.classList.remove("active");
+      });
+      e.currentTarget.classList.add("active");
+      let goToSection = document.querySelector(e.target.dataset.nav).offsetTop;
+      window.scrollTo({
+        top: goToSection,
+        left: 0,
+        behaviour: "smooth",
+      });
+    });
+  });
+}
+
+scrollToSection(navLi);
+
 // filter functionality
 
 let switchLi = document.querySelectorAll(".switch li");
@@ -56,27 +80,3 @@ function filterImages(imagesTrigger) {
 }
 
 filterImages(switchLi);
-
-// scroll to section functionality
-
-let sectionLi = document.querySelectorAll("nav ul li a");
-
-function scrollToSection(section) {
-  section.forEach((ele) => {
-    ele.addEventListener("click", (e) => {
-      e.preventDefault();
-      section.forEach((a) => {
-        a.classList.remove("active");
-      });
-      e.currentTarget.classList.add("active");
-      let goToSection = document.querySelector(e.target.dataset.nav).offsetTop;
-      window.scrollTo({
-        top: goToSection,
-        left: 0,
-        behaviour: "smooth",
-      });
-    });
-  });
-}
-
-scrollToSection(sectionLi);
