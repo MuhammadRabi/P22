@@ -1,0 +1,57 @@
+// import sass files
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* start services section */
+.services {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  margin-bottom: 100px;
+  .service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 50px;
+    @include mobile {
+      display: block;
+    }
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 50px;
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      /* width: 80%;*/
+      i {
+        font-size: 48px;
+        margin-right: 40px;
+        @include mobile {
+          margin-bottom: 30px;
+          margin-right: 0;
+        }
+      }
+      .text {
+        h3 {
+          color: var(--main-color);
+          text-transform: capitalize;
+        }
+        p {
+          padding-right: 25px;
+          line-height: 35px;
+          margin-top: 10px;
+          color: #777;
+          @include mobile {
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* end services section */

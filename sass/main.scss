@@ -1,0 +1,21 @@
+// import sass files
+
+@use "components/variables";
+@use "components/mixins";
+@use "components/breakpoints";
+@use "components/buttons";
+
+// import sections files
+
+@use "sections/base";
+@use "sections/header";
+@use "sections/services";
+@use "sections/product-feat";
+@use "sections/super";
+@use "sections/portfolio";
+@use "sections/pricing";
+@use "sections/about";
+@use "sections/contact";
+@use "sections/subscribe";
+@use "sections/scroll";
+@use "sections/footer";

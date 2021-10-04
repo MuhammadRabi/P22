@@ -1,0 +1,29 @@
+// import sass files
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* scroll to top styling */
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    background-color: #086782;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+/* scroll to top styling */

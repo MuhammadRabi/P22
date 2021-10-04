@@ -1,0 +1,134 @@
+/* import major sass files */
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* Start Global rules */
+
+/* reusable components */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --main-color: #19c8fa;
+  --main-background: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.margin-50 {
+  margin-top: 50px;
+}
+
+.margin-100 {
+  margin-top: 100px;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+button {
+  border: 1px solid $mainColor;
+  background-color: #fff;
+  padding: 7px 20px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+/* end global rules */
+
+/* ===== Manual Responsive layout ===== */
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /* small */
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  /* medium */
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  /* large */
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
+/* ===== Manual Responsive layout ===== */
+
+.special-heading {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #333;
+    bottom: -30px;
+    width: 120px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    bottom: -38px;
+    background-color: white;
+  }
+}
+
+.main-heading {
+  h3 {
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  p {
+    line-height: 1.6;
+    width: 50%;
+    margin: 5px auto;
+    font-size: 14px;
+    color: #777;
+    line-height: 2;
+    text-align: center;
+    padding-bottom: 60px;
+    @media (max-width: 991px) {
+      width: 75%;
+    }
+  }
+}
+
+/* reusable components */
+
+body {
+  font-family: "Open Sans", sans-serif;
+}

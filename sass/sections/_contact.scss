@@ -1,0 +1,80 @@
+// import sass files
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* start contact section */
+
+.contact {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .content {
+    display: flex;
+    justify-content: space-around;
+    @include mobile {
+      flex-direction: column;
+    }
+    form {
+      flex-basis: 70%;
+      .main-input {
+        display: block;
+        padding: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          text-transform: capitalize;
+        }
+      }
+      textarea.main-input {
+        height: 200px;
+      }
+      input[type="submit"] {
+        background-color: var(--main-color);
+        padding: 18px;
+        color: var(--main-background);
+        display: flex;
+        margin-left: auto;
+        border: transparent;
+        cursor: pointer;
+        text-transform: capitalize;
+      }
+      @include mobile {
+        order: 1;
+      }
+    }
+  }
+  .info {
+    flex-basis: 25%;
+
+    h4 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+    .phone {
+      display: block;
+    }
+    h4:nth-of-type(2) {
+      margin-top: 35px;
+    }
+    span {
+      color: #777;
+    }
+    address {
+      margin-top: 15px;
+      color: #777;
+    }
+    @include mobile {
+      text-align: center;
+      margin-bottom: 0px;
+    }
+  }
+}
+/* end contact section */

@@ -1,0 +1,73 @@
+// import sass files
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* start portfolio */
+.port {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .switch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    li {
+      padding: 10px;
+      cursor: pointer;
+      transition: $mainTransition;
+      &.active {
+        background-color: var(--main-color);
+        color: #fff;
+      }
+    }
+  }
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    .img-box {
+      position: relative;
+      width: 25%;
+      overflow: hidden;
+      cursor: pointer;
+      @include mobile {
+        width: 100%;
+      }
+      @include mediumScreens {
+        width: 50%;
+      }
+      &:hover .img-caption {
+        bottom: 0;
+      }
+      &:hover img {
+        transform: rotate(3deg) scale(1.1);
+      }
+      img {
+        transition: $mainTransition;
+      }
+      .img-caption {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 75px;
+        transition: $mainTransition;
+        background-color: #fff;
+        text-transform: capitalize;
+        font-size: 14px;
+        padding: 5px 15px;
+        h4 {
+          margin-top: 5px;
+          margin-bottom: 7px;
+          font-weight: 400;
+        }
+        span {
+          color: var(--main-color);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+/* End portfolio */

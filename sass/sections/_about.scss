@@ -1,0 +1,46 @@
+// import sass files
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* start about section */
+.about {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+}
+
+/* end about section */
+
+/* start quote */
+.quote {
+  position: relative;
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  background: url("../../images/quote.jpg");
+  background-size: cover;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    @include overlay;
+  }
+  .text-box {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    p {
+      font-size: 28px;
+      padding-bottom: 20px;
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    h4 {
+      font-size: 18px;
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* end quote */

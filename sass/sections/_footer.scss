@@ -1,0 +1,76 @@
+// import sass files
+
+@use "../components/variables" as *;
+@use "../components/mixins" as *;
+@use "../components/breakpoints" as *;
+@use "../components/buttons" as *;
+
+/* start footer */
+footer {
+  position: relative;
+  background: url("../../images/subscribe.jpg");
+  background-size: cover;
+  min-height: 300px;
+  color: #fff;
+
+  .overlay {
+    @include overlay;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .container {
+    text-align: center;
+    .logo {
+      position: relative;
+    }
+    img {
+      margin-top: 50px;
+    }
+    > p {
+      font-size: 28px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      padding: 15px;
+      position: relative;
+      @include mobile {
+        font-size: 24px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 18%;
+        top: 58px;
+        background-color: #fff;
+        @include mobileandMedium {
+          width: 65%;
+        }
+      }
+    }
+  }
+  .copyright {
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+    text-transform: uppercase;
+    @include mobileandMedium {
+      font-size: 12px;
+    }
+    span {
+      color: var(--main-color);
+    }
+  }
+  .social-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 25px auto;
+
+    i {
+      color: #fff;
+      font-size: 18px;
+      margin-left: 15px;
+    }
+  }
+}
+/* end footer */
