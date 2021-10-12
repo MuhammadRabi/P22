@@ -16,10 +16,18 @@
       border-top: 1px solid var(--main-color);
       background-color: #fcfcfc;
       text-align: center;
+      cursor: pointer;
+      transition: $mainTransition;
+      &.best,
+      &:hover {
+        background-color: var(--main-color);
+        color: #fff;
+        transform: translateY(-50px);
+      }
+
       .card-title {
         margin: 25px;
         text-transform: uppercase;
-
         span {
           font-size: 48px;
           font-weight: 700;
@@ -52,10 +60,30 @@
             border-bottom: 1px solid var(--main-color);
           }
         }
+        &.best :not(:last-of-type),
+        &:hover {
+          border-bottom: 1px solid #fff;
+        }
+      }
+      &.best .plan-feat,
+      &:hover .plan-feat {
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        li {
+          &:not(:last-of-type) {
+            border-bottom: 1px solid #fff;
+          }
+        }
       }
       button {
         display: block;
         margin: 30px auto;
+        outline: none;
+        border-radius: 5px;
+        transition: $mainTransition;
+        &:hover {
+          transform: scale(0.95);
+        }
       }
     }
   }

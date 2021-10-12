@@ -111,6 +111,9 @@ button {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 50px;
+    @include mobile {
+      font-size: 24px;
+    }
   }
   p {
     line-height: 1.6;
